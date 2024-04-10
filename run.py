@@ -15,12 +15,18 @@ def rules():
     print("You have 6 lives. If you get 6 incorrect answers then you lose.")
     print("If you guess the word before the hangman is complete then you win!")
     print("--------------------")
-    print("Press return to return to the main menu...")
+    print("Press ENTER to return to the main menu...")
     input()
     start_menu()
 
 def start_game():
     print("Starting game...")
+    print(gallows_image[0])
+    hidden_word = random.choice(words_list).upper()
+    hidden_letters = "_ " * len(hidden_word)
+    print(f"The word to guess is: {hidden_letters}")
+
+    
 
 def start_menu():
     print("--------------------")
@@ -54,10 +60,6 @@ def start_menu():
             print("Invalid option. Please enter 1, 2, or 3.")
 
     
-        
-
-    
-
 
 start_menu()
 
