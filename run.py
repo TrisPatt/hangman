@@ -5,6 +5,12 @@ from words import words_list
 number_of_guesses = 6
 previous_guesses = []
 
+def rules():
+    print("These are the rules")
+
+def start_game():
+    print("Starting game...")
+
 def start_menu():
     print("--------------------")
     print("Welcome to Hangman!")
@@ -24,10 +30,20 @@ def start_menu():
         print(" 3. Quit")
         options = input("Enter: ")
 
-        if options in ["1", "2", "3"]:
-            return int(options)
+        if options == '1':
+            rules()
+            break
+        elif options == '2':
+            start_game()
+            break
+        elif options == '3':
+            print("Exiting the game, Goodbye! ...")
+            break
         else:
-            print("Please select either 1, 2 or 3")
+            print("Invalid option. Please enter 1, 2, or 3.")
+
+    
+        
 
     
 
