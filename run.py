@@ -17,11 +17,19 @@ def start_menu():
      / \  |
           |
     =========''')
-    print("Please select an option: ")
-    print(" 1. How to play")
-    print(" 2. Start the game!")
-    print(" 3. Quit")
-    options = input("Enter: ")
+    while True:
+        print("Please select an option: ")
+        print(" 1. How to play")
+        print(" 2. Start the game!")
+        print(" 3. Quit")
+        options = input("Enter: ")
+
+        if options in ["1", "2", "3"]:
+            return int(options)
+        else:
+            print("Please select either 1, 2 or 3")
+
+    
 
 
 start_menu()
