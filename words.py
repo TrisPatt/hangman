@@ -2,7 +2,7 @@
 words_list = [
     "bread",
     "mango",
-    "fish"
+    "fish",
     "date",
     "fig",
     "grape",
