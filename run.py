@@ -14,6 +14,10 @@ def rules():
     print("The previous guessed letters will be displayed.")
     print("You have 6 lives. If you get 6 incorrect answers then you lose.")
     print("If you guess the word before the hangman is complete then you win!")
+    print("--------------------")
+    print("Press return to return to the main menu...")
+    input()
+    start_menu()
 
 def start_game():
     print("Starting game...")
