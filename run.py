@@ -6,7 +6,14 @@ number_of_guesses = 6
 previous_guesses = []
 
 def rules():
-    print("These are the rules")
+    print("--------------------")
+    print("How to play!")
+    print("--------------------")
+    print("Hangman is a word guessing game. The aim is to guess the hidden word \nbefore all the body parts of the man are revealed.")
+    print("Guess a letter. If the letter is in the hidden word then this will \nbe displayed in the position it is in that word. If it is not in the \nword then you will lose a life and another part of the man will be \nrevealed.")
+    print("The previous guessed letters will be displayed.")
+    print("You have 6 lives. If you get 6 incorrect answers then you lose.")
+    print("If you guess the word before the hangman is complete then you win!")
 
 def start_game():
     print("Starting game...")
