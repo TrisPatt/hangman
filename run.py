@@ -25,6 +25,13 @@ def start_game():
     hidden_word = random.choice(words_list).upper()
     hidden_letters = "_ " * len(hidden_word)
     print(f"The word to guess is: {hidden_letters}")
+    print(hidden_word)
+    
+    guess = input("Please enter your guess: ").upper()
+    if guess == guess in hidden_word:
+        print("correct")
+    else:
+        print("incorrect")
 
     
 
