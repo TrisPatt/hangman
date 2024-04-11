@@ -2,8 +2,6 @@ import random
 from gallows import gallows_image
 from words import words_list
 
-number_of_guesses = 6
-previous_guesses = []
 
 def rules():
     print("--------------------")
@@ -19,21 +17,38 @@ def rules():
     input()
     start_menu()
 
+def print_gallows(incorrect_guesses):
+    if incorrect_guesses < len(gallows_image):
+        print(gallows_image[incorrect_guesses])
+    else:
+        print("You lose")
+
 def start_game():
     print("Starting game...")
-    print(gallows_image[0])
+    incorrect_guesses = 0
+    max_incorrect_guesses = len(gallows_image) -1
+    previous_guesses = []
     hidden_word = random.choice(words_list).upper()
     hidden_letters = "_ " * len(hidden_word)
-    print(f"The word to guess is: {hidden_letters}")
-    print(hidden_word)
+    print(f"The word to guess is: {hidden_letters}")  
+    print(hidden_word) 
+    print_gallows(0)
     
-    guess = input("Please enter your guess: ").upper()
-    if guess == guess in hidden_word:
-        print("correct")
-    else:
-        print("incorrect")
+        
+    while incorrect_guesses <= max_incorrect_guesses:
+        guess = input("Enter your guess: ").upper()
+        if guess == guess in hidden_word:
+            print("correct")
+            print(hidden_letters)
+        else:
+            print("Incorrect guess!")
+            incorrect_guesses += 1
+            print_gallows(incorrect_guesses)
+            
+            if incorrect_guesses > max_incorrect_guesses:
+                print("You lost! You ran out of guesses.")
+                break
 
-    
 
 def start_menu():
     print("--------------------")
