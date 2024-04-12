@@ -21,7 +21,7 @@ def print_gallows(incorrect_guesses, max_incorrect_guesses):
     if incorrect_guesses < len(gallows_image):
         print(gallows_image[incorrect_guesses])
     else:
-        print("You lose")
+        print("-------------------")
 
 
 def start_game():
@@ -35,8 +35,12 @@ def start_game():
     print_gallows(0, max_incorrect_guesses)  
         
     while incorrect_guesses <= max_incorrect_guesses:
-        guess = input("Enter your guess: ").upper()
+        guess = input("Enter your guess: \n").upper()
         print("The word to guess is:", " ".join(hidden_letters))
+
+        if guess in previous_guesses:
+            print("You already guessed that!")
+            continue
 
         if guess in hidden_word:
             print("Correct!!")
@@ -44,6 +48,7 @@ def start_game():
                 if hidden_word[i] == guess:
                     hidden_letters[i] = guess
             print(f"The word to guess is:", " ".join(hidden_letters))
+
             if "_" not in hidden_letters: 
                 print("Congratulations! You've guessed the word correctly!\n")
                 start_menu()
@@ -60,10 +65,10 @@ def start_game():
             
             if incorrect_guesses > max_incorrect_guesses:
                 print("You lost! You ran out of guesses.\n")
-                start_menu()
+                print(f"The word you were looking for is {hidden_word} !")
+                
                 
     
-
 def start_menu():
     print("--------------------")
     print("Welcome to Hangman!")
@@ -98,9 +103,5 @@ def start_menu():
     
 
 start_menu()
-
-
-
-#def main():
   
 
