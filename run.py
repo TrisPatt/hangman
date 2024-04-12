@@ -1,4 +1,5 @@
 import random
+import os
 from gallows import gallows_image
 from words import words_list
 
@@ -7,8 +8,7 @@ def rules():
     print("--------------------")
     print("How to play!")
     print("--------------------")
-    print("Hangman is a word guessing game. The aim is to guess the hidden word \nbefore all the body parts of the man are revealed.")
-    print("Guess a letter. If the letter is in the hidden word then this will \nbe displayed in the position it is in that word. If it is not in the \nword then you will lose a life and another part of the man will be \nrevealed.")
+    print("Hangman is a word guessing game. The aim is to guess the hidden word \nbefore all the body parts of the man are revealed. /nGuess a letter. If the letter is in the hidden word then this will \nbe displayed in the position it is in that word. If it is not in the \nword then you will lose a life and another part of the man will be \nrevealed.")
     print("The previous guessed letters will be displayed.")
     print("You have 6 lives. If you get 6 incorrect answers then you lose.")
     print("If you guess the word before the hangman is complete then you win!")
@@ -23,6 +23,12 @@ def print_gallows(incorrect_guesses, max_incorrect_guesses):
     else:
         print("-------------------")
 
+def clear_screen():
+    if os.name == 'posix':  
+        _ = os.system('clear')
+    elif os.name == 'nt':  
+        _ = os.system('cls')
+
 
 def start_game():
     print("Starting game...")
@@ -35,11 +41,15 @@ def start_game():
     print_gallows(0, max_incorrect_guesses)  
         
     while incorrect_guesses <= max_incorrect_guesses:
-        guess = input("Enter your guess: \n").upper()
+        guess = input("Enter your guess: ").upper()
+        clear_screen()
         print("The word to guess is:", " ".join(hidden_letters))
 
         if guess in previous_guesses:
             print("You already guessed that!")
+            print_gallows(incorrect_guesses, max_incorrect_guesses)
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))
+
             continue
 
         if guess in hidden_word:
@@ -51,7 +61,7 @@ def start_game():
 
             if "_" not in hidden_letters: 
                 print("Congratulations! You've guessed the word correctly!\n")
-                start_menu()
+                
                 
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
