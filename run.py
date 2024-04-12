@@ -17,38 +17,49 @@ def rules():
     input()
     start_menu()
 
-def print_gallows(incorrect_guesses):
+def print_gallows(incorrect_guesses, max_incorrect_guesses):
     if incorrect_guesses < len(gallows_image):
         print(gallows_image[incorrect_guesses])
     else:
         print("You lose")
 
+
 def start_game():
     print("Starting game...")
     incorrect_guesses = 0
-    max_incorrect_guesses = len(gallows_image) -1
+    max_incorrect_guesses = len(gallows_image) - 1
     previous_guesses = []
     hidden_word = random.choice(words_list).upper()
-    hidden_letters = "_ " * len(hidden_word)
-    print(f"The word to guess is: {hidden_letters}")  
-    print(hidden_word) 
-    print_gallows(0)
-    
+    hidden_letters = ["_"] * len(hidden_word)
+    print("The word to guess is:", " ".join(hidden_letters))
+    print_gallows(0, max_incorrect_guesses)  
         
     while incorrect_guesses <= max_incorrect_guesses:
         guess = input("Enter your guess: ").upper()
-        if guess == guess in hidden_word:
+        print(f"previous guesses: {previous_guesses}")
+        print(f"The word to guess is: {hidden_letters}")
+
+        if guess in hidden_word:
             print("correct")
-            print(hidden_letters)
+            for i in range(len(hidden_word)):
+                if hidden_word[i] == guess:
+                    hidden_letters[i] = guess
+            print(f"The word to guess is:", " ".join(hidden_letters))
+            if "_" not in hidden_letters: 
+                print("Congratulations! You've guessed the word correctly!")
+                break
+            print_gallows(incorrect_guesses, max_incorrect_guesses)
+                        
         else:
-            print("Incorrect guess!")
+            print("Incorrect")
             incorrect_guesses += 1
-            print_gallows(incorrect_guesses)
+            print_gallows(incorrect_guesses, max_incorrect_guesses)
+            previous_guesses.append(guess)
             
             if incorrect_guesses > max_incorrect_guesses:
                 print("You lost! You ran out of guesses.")
                 break
-
+    
 
 def start_menu():
     print("--------------------")
