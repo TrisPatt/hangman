@@ -44,10 +44,15 @@ def start_game():
         guess = input("Enter your guess: ").upper()
         clear_screen()
 
-        if guess in previous_guesses:
-            print("You already guessed that!")
+        if not guess.isalpha():
+            print("Invalid option. Please enter a letter")
             print_gallows(incorrect_guesses, max_incorrect_guesses)
-            print(f"Incorrect guesses: ", " ".join(previous_guesses))
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))      
+
+            if guess in previous_guesses:
+                print("You already guessed that!")
+                print_gallows(incorrect_guesses, max_incorrect_guesses)
+                print(f"Incorrect guesses: ", " ".join(previous_guesses))
 
             continue
 
@@ -61,8 +66,7 @@ def start_game():
             if "_" not in hidden_letters: 
                 print("Congratulations! You've guessed the word correctly!\n")
                 break
-                
-                
+            
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
                         
