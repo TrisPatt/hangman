@@ -43,7 +43,6 @@ def start_game():
     while incorrect_guesses <= max_incorrect_guesses:
         guess = input("Enter your guess: ").upper()
         clear_screen()
-        print("The word to guess is:", " ".join(hidden_letters))
 
         if guess in previous_guesses:
             print("You already guessed that!")
@@ -61,6 +60,7 @@ def start_game():
 
             if "_" not in hidden_letters: 
                 print("Congratulations! You've guessed the word correctly!\n")
+                break
                 
                 
             print_gallows(incorrect_guesses, max_incorrect_guesses)
@@ -69,6 +69,7 @@ def start_game():
         else:
             print("Incorrect")
             incorrect_guesses += 1
+            print("The word to guess is:", " ".join(hidden_letters))
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             previous_guesses.append(guess)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
