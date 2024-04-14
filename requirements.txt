@@ -1,1 +1,2 @@
-# Your requirements go here
+getch==1.0
+keyboard==0.13.5
