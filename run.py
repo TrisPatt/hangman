@@ -5,6 +5,9 @@ from words import words_list
 
 
 def rules():
+    """
+    Display the rules of the game and return to the main menu
+    """
     print("--------------------")
     print("How to play!")
     print("--------------------")
@@ -17,20 +20,53 @@ def rules():
     input()
     start_menu()
 
+
 def print_gallows(incorrect_guesses, max_incorrect_guesses):
+    """
+    Prints the status of the gallows depending on the number of incorrect guesses
+    """
     if incorrect_guesses < len(gallows_image):
         print(gallows_image[incorrect_guesses])
     else:
         print("-------------------")
 
+
 def clear_screen():
+    """
+    Clear the terminal after each guess. The OS module is imported which allows for the function
+    to operate on different operating systems.
+    """
     if os.name == 'posix':  
         _ = os.system('clear')
     elif os.name == 'nt':  
         _ = os.system('cls')
 
 
+def return_main_menu():
+    """
+    Asks users if they wish to return to the main menu
+    """
+    while True:
+        menu_return = input("Would you like to return to the main menu? y/n: ")
+    
+        if menu_return == 'y':
+            start_menu()
+            break
+        elif menu_return == 'n':
+            print("Thank you for playing!")
+            break
+        else:
+            print("please press 'y' or 'n'")
+
+
 def start_game():
+    """
+    Generate a random word from words_list.py and convert to uppercase in order to validate it
+    against the user guess, which is also converted to upercase on input. 
+    Create the game visual display showing the gallows, the word to guess, previous incorrect guesses.
+    Run a while loop which runs until the maximum incorrect guesses is reached or the user wins. This 
+    validates the input and shows game progress, updating gallows and previous incorrect guesses.
+    """
     print("Starting game...")
     incorrect_guesses = 0
     max_incorrect_guesses = len(gallows_image) - 1
@@ -47,15 +83,16 @@ def start_game():
         if not guess.isalpha():
             print("Invalid option. Please enter a letter")
             print_gallows(incorrect_guesses, max_incorrect_guesses)
-            print(f"Incorrect guesses: ", " ".join(previous_guesses))      
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))   
+            continue   
 
-            if guess in previous_guesses:
-                print("You already guessed that!")
-                print_gallows(incorrect_guesses, max_incorrect_guesses)
-                print(f"Incorrect guesses: ", " ".join(previous_guesses))
-
+        if guess in previous_guesses:
+            print("You already guessed that!")
+            print("The word to guess is:", " ".join(hidden_letters))
+            print_gallows(incorrect_guesses, max_incorrect_guesses)
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))
             continue
-
+        
         if guess in hidden_word:
             print("Correct!!")
             for i in range(len(hidden_word)):
@@ -65,7 +102,7 @@ def start_game():
 
             if "_" not in hidden_letters: 
                 print("Congratulations! You've guessed the word correctly!\n")
-                break
+                return_main_menu()
             
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
@@ -81,10 +118,16 @@ def start_game():
             if incorrect_guesses > max_incorrect_guesses:
                 print("You lost! You ran out of guesses.\n")
                 print(f"The word you were looking for is {hidden_word} !")
+                return_main_menu()
                 
+            
                 
-    
 def start_menu():
+    """
+    Create the introduction and provide 3 options to the user with a while loop
+    to limit the input to the 3 choices only.
+    provides a way of exiting the game, rules and staring the game
+    """
     print("--------------------")
     print("Welcome to Hangman!")
     print("--------------------")
@@ -116,7 +159,6 @@ def start_menu():
             print("Invalid option. Please enter 1, 2, or 3.")
 
     
-
 start_menu()
   
 
