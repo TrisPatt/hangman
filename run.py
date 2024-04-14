@@ -47,14 +47,14 @@ def return_main_menu():
     Asks users if they wish to return to the main menu
     """
     while True:
-        menu_return = input("Would you like to return to the main menu? y/n: ")
+        menu_return = input("Would you like to return to the main menu? y/n: \n")
     
         if menu_return == 'y':
             start_menu()
             break
         elif menu_return == 'n':
             print("Thank you for playing!")
-            break
+            exit()
         else:
             print("please press 'y' or 'n'")
 
@@ -77,13 +77,14 @@ def start_game():
     print_gallows(0, max_incorrect_guesses)  
         
     while incorrect_guesses <= max_incorrect_guesses:
-        guess = input("Enter your guess: ").upper()
+        guess = input("Enter your guess: \n").upper()
         clear_screen()
 
         if not guess.isalpha():
             print("Invalid option. Please enter a letter")
             print_gallows(incorrect_guesses, max_incorrect_guesses)
-            print(f"Incorrect guesses: ", " ".join(previous_guesses))   
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))  
+            print("The word to guess is:", " ".join(hidden_letters)) 
             continue   
 
         if guess in previous_guesses:
@@ -144,7 +145,7 @@ def start_menu():
         print(" 1. How to play")
         print(" 2. Start the game!")
         print(" 3. Quit")
-        options = input("Enter: ")
+        options = input("Enter: \n")
 
         if options == '1':
             rules()
