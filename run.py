@@ -67,6 +67,7 @@ def start_game():
     Run a while loop which runs until the maximum incorrect guesses is reached or the user wins. This 
     validates the input and shows game progress, updating gallows and previous incorrect guesses.
     """
+    clear_screen()
     print("Starting game...")
     incorrect_guesses = 0
     max_incorrect_guesses = len(gallows_image) - 1
@@ -80,8 +81,8 @@ def start_game():
         guess = input("Enter your guess: \n").upper()
         clear_screen()
 
-        if not guess.isalpha():
-            print("Invalid option. Please enter a letter")
+        if len(guess) !=1 or not guess.isalpha():
+            print("Invalid option. Please enter a single letter")
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))  
             print("The word to guess is:", " ".join(hidden_letters)) 
@@ -93,7 +94,7 @@ def start_game():
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
             continue
-        
+
         if guess in hidden_word:
             print("Correct!!")
             for i in range(len(hidden_word)):
@@ -122,7 +123,6 @@ def start_game():
                 return_main_menu()
                 
             
-                
 def start_menu():
     """
     Create the introduction and provide 3 options to the user with a while loop
