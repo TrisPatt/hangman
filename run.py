@@ -11,14 +11,15 @@ def rules():
     print("--------------------")
     print("How to play!")
     print("--------------------")
-    print("""Hangman is a word guessing game. The aim is to guess the hidden 
-    word \nbefore all the body parts of the man are revealed. \nGuess a letter. 
-    If the letter is in the hidden word then this will \nbe displayed in the 
-    position it is in that word. If it is not in the \nword then you will lose 
-    a life and another part of the man will be \nrevealed. The previous guessed 
-    letters will be displayed. You have 6 lives. If you get 6 incorrect answers 
-    then you lose.If you guess the word before the hangman is complete then you 
-    win!""")
+    print("""
+    Hangman is a word guessing game. The aim is to guess the hidden 
+    word before all the body parts of the man are revealed.
+    Guess a letter. If the letter is in the hidden word then this will be 
+    displayed in the position it is in that word. If it is not in the word 
+    then you will lose a life and another part of the man will be revealed. 
+    The previous guessed letters will be displayed. You have 6 lives. 
+    If you get 6 incorrect answers then you lose.If you guess the word before 
+    the hangman is complete then you win!""")
     print("--------------------")
     print("Press ENTER to return to the main menu...")
     input()
@@ -55,12 +56,13 @@ def return_main_menu():
         menu_return = input("""Would you like to return to the main menu? 
         y/n: \n""")
     
-        if menu_return == 'y':
+        if menu_return.lower() == 'y':
             start_menu()
             break
-        elif menu_return == 'n':
+        elif menu_return.lower() == 'n':
             print("Thank you for playing!")
             exit()
+            break
         else:
             print("please press 'y' or 'n'")
 
@@ -105,7 +107,7 @@ def start_game():
             continue
 
         if guess in hidden_word:
-            print("Correct!!")
+            print("Correct!!\n")
             for i in range(len(hidden_word)):
                 if hidden_word[i] == guess:
                     hidden_letters[i] = guess
@@ -164,6 +166,7 @@ def start_menu():
             break
         elif options == '3':
             print("Exiting the game, Goodbye! ...")
+            exit()
             break
         else:
             print("Invalid option. Please enter 1, 2, or 3.")
