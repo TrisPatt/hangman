@@ -66,6 +66,9 @@ def return_main_menu():
             print("please press 'y' or 'n'")
 
 def multiple_letter(word, letter):
+    """
+    validates multiple letters in a word
+    """
     multiple = []
     for i, char in enumerate(word):
         if char == letter:
