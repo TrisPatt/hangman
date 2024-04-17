@@ -45,10 +45,7 @@ def clear_screen():
     Clear the terminal after each guess. The OS module is imported which 
     allows for the function to operate on different operating systems.
     """
-    if os.name == 'posix':  
-        _ = os.system('clear')
-    elif os.name == 'nt':  
-        _ = os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def return_main_menu():
