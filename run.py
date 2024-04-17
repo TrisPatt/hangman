@@ -53,8 +53,7 @@ def return_main_menu():
     Asks users if they wish to return to the main menu
     """
     while True:
-        menu_return = input("""Would you like to return to the main menu? 
-        y/n: \n""")
+        menu_return = input("""Would you like to return to the main menu? y/n: \n""")
     
         if menu_return.lower() == 'y':
             start_menu()
@@ -65,6 +64,13 @@ def return_main_menu():
             break
         else:
             print("please press 'y' or 'n'")
+
+def multiple_letter(word, letter):
+    multiple = []
+    for i, char in enumerate(word):
+        if char == letter:
+            multiple.append(i)
+    return multiple
 
 
 def start_game():
@@ -100,7 +106,7 @@ def start_game():
             continue   
 
         if guess in previous_guesses:
-            print("You already guessed that!\n")
+            print("You've already guessed that!\n")
             print("The word to guess is:", " ".join(hidden_letters))
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
@@ -108,9 +114,9 @@ def start_game():
 
         if guess in hidden_word:
             print("Correct!!\n")
-            for i in range(len(hidden_word)):
-                if hidden_word[i] == guess:
-                    hidden_letters[i] = guess
+            multiple = multiple_letter(hidden_word, guess)
+            for index in multiple:
+                hidden_letters[index] = guess
             print(f"The word to guess is:", " ".join(hidden_letters))
 
             if "_" not in hidden_letters: 
