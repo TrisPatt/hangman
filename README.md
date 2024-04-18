@@ -6,7 +6,7 @@ Users can try to guess the hidden movie title by guessing letters within the wor
 
 ![Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
 
-![Screenshot overview]("assets/images/Screenshot 2024-04-18 114857.webp")
+![Screenshot overview]("assets/images/Screenshot-responsive.webp")
 
 ## How to play
 
@@ -37,13 +37,13 @@ The start menu contains 3 possible options:
 - Start game- to start the game
 - Exit- the option to exit out of the game
 
-![Start Menu]("assets/images/Screenshot start menu.webp")
+![Start Menu]("assets/images/Screenshot-start-menu.webp")
 
 #### How to play
 
 This tells the user how to play the game and what the rules are.
 
-![How to Play]("assets/images/Screenshot rules.webp")
+![How to Play]("assets/images/Screenshot-rules.webp")
 
 #### Start Game
 
@@ -52,7 +52,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
 
 The user is asked to enter their guess.
 
-![Start Game]("/workspace/hangman/assets/images/Screenshot startt of game.webp")
+![Start Game](assets/images/Screenshot-start-of-game.webp"")
 
 - Correct guess!
 
@@ -60,27 +60,27 @@ If correct, the user is informed and the letter is displayed where it is positio
 If there are more than one occurences of that letter, they are also displayed in their positions 
 within the word.
 
-![Correct guess]("assets/images/Screenshot correct guess.webp")
+![Correct guess]("assets/images/Screenshot-correct-guess.webp")
 
 - Incorrect guess!
 
 If the guess is incorrect, the user is informed, the previous guesses list is updated and the next
 body part of the hangman is revealed. 
 
-![Incorrect guess]("assets/images/Screenshot incorrect guess.webp")
+![Incorrect guess]("assets/images/Screenshot-incorrect-guess.webp")
 
 - Winning the game
 
 The user wins when the word is correctly guessed before their lives run out.
 The user is asked if they wish to return to the main menu.
 
-![Winning the game]("assets/images/Screenshot win.webp")
+![Winning the game]("assets/images/Screenshot-win.webp")
 
 - Losing the game
 
 The user loses when all the lives run out and all body parts of the hangman are displayed. 
 
-![losing the game]("assets/images/Screenshot lose.webp")
+![losing the game]("assets/images/Screenshot-lose.webp")
 
 #### Input validation and Error checking
 
@@ -88,7 +88,7 @@ The user loses when all the lives run out and all body parts of the hangman are 
  - In the start menu, only the numbers 1,2 or 3 can be entered. If anything else is entered then the user
  is asked to input again; 1,2 or 3.
 
-![start menu validation]("assets/images/Screenshot start menu error check.webp")
+![start menu validation]("assets/images/Screenshot-start-menu-error-check.webp")
 
 - The game
   - This only allows an input of a single letter. Numbers and special characters are invalid. If multiple
@@ -96,7 +96,7 @@ The user loses when all the lives run out and all body parts of the hangman are 
   again. 
   - If the user has already guessed a letter, this is invalid and an error message is displayed.
 
-![game validation]()
+![game validation]("assets/images/Screenshot-start-validation.webp")
 
 ### Future Features
 
