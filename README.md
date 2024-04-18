@@ -4,7 +4,7 @@ Hangman- The movie edition is a Python terminal game which runs on the Code Inst
 
 Users can try to guess the hidden movie title by guessing letters within the word before their lives run out.
 
-![Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
+![Here is the live version of the game][link](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
 
 ![Screenshot overview](assets/images/Screenshot-responsive.webp)
 
@@ -41,44 +41,44 @@ The start menu contains 3 possible options:
 
 #### How to play
 
-This tells the user how to play the game and what the rules are.
+- This tells the user how to play the game and what the rules are.
 
 ![How to Play](assets/images/Screenshot-rules.webp)
 
 #### Start Game
 
-This starts the game. A random word is generated where the letters of the word are represented by
+- This starts the game. A random word is generated where the letters of the word are represented by
 underscores. The gallows are shown, as well as a section for incorrect guesses. 
 
-The user is asked to enter their guess.
+- The user is asked to enter their guess.
 
 ![Start Game](assets/images/Screenshot-start-of-game.webp)
 
 - Correct guess!
 
-If correct, the user is informed and the letter is displayed where it is positioned in the word. 
-If there are more than one occurences of that letter, they are also displayed in their positions 
-within the word.
+  - If correct, the user is informed and the letter is displayed where it is positioned in the word. 
+  If there are is than one occurence of that letter, they are also displayed in their positions 
+  within the word.
 
 ![Correct guess](assets/images/Screenshot-correct-guess.webp)
 
 - Incorrect guess!
 
-If the guess is incorrect, the user is informed, the previous guesses list is updated and the next
-body part of the hangman is revealed. 
+  - If the guess is incorrect, the user is informed, the previous guesses list is updated and the next
+  body part of the hangman is revealed. 
 
 ![Incorrect guess](assets/images/Screenshot-incorrect-guess.webp)
 
 - Winning the game
 
-The user wins when the word is correctly guessed before their lives run out.
-The user is asked if they wish to return to the main menu.
+  - The user wins when the word is correctly guessed before their lives run out.
+  - The user is asked if they wish to return to the main menu.
 
 ![Winning the game](assets/images/Screenshot-win.webp)
 
 - Losing the game
 
-The user loses when all the lives run out and all body parts of the hangman are displayed. 
+  - The user loses when all the lives run out and all body parts of the hangman are displayed. 
 
 ![losing the game](assets/images/Screenshot-lose.webp)
 
@@ -95,6 +95,7 @@ The user loses when all the lives run out and all body parts of the hangman are 
   letters are entered, this is also invalid. The error message is displayed and the user is asked to guess
   again. 
   - If the user has already guessed a letter, this is invalid and an error message is displayed.
+  - The letters are all converted to uppercase and compared for validation.
 
 ![game validation](assets/images/Screenshot-start-validation.webp)
 
@@ -106,14 +107,25 @@ The user loses when all the lives run out and all body parts of the hangman are 
 
 ## Design and logic
 
-Before I developed the game, I created a flow diagram in order to plan the logic and flow of the game at
+- Before I developed the game, I created a flow diagram in order to plan the logic and flow of the game at
 various stages.
 
-![Flow diagram]()
+![Flow diagram](assets/images/flow-diagram.webp)
 
 ## Data Model
 
--
+- The gallows images are ASCII art stored in a list in a seperate file; gallows.py. The words
+used are also stored in a seperate file; words.py. Both are imported at the top of the main
+file; run.py. 
+- Various variables are used to store game state and user input, such as incorrect_guesses, 
+max_incorrect_guesses, previous_guesses, hidden_word, hidden_letters, and guess.
+- The code defines several functions; rules(), print_gallows(), clear_screen(), return_main_menu(),
+multiple_letter(), start_game(), and start_menu() to organize and encapsulate different aspects of 
+the game's functionality.
+- The game interacts with the user through input prompts and displays information using print()
+statements.
+- The import random and import os statements are used to import modules for generating random numbers
+(for selecting a word from the words_list) and for clearing the terminal screen clear_screen().
 
 ## Technologies used
 
@@ -138,12 +150,6 @@ I have manually tested the game as follows:
 
 ### Bugs
 
-- Bug- The background colour would not show over the images to highlight the overlay text on the upcoming gigs section <br>
-  Fix- I fixed this by wrapping another div around the text element and applying the background colour to the text rather than the div for the images
-- Bug - The images of the band in the contact section were showing outside the screen on some screen sizes<br>
-  Fix- I added the selectors to the relevant media queries and changed the size of the images so that they would show up in a row on different screen sizes
-- Bug - On testing, the lighthouse report showed a bad load time for the main LCP on the home page <br>
-  Fix - I made the fetch priority high on the index.HTML head to preload the image. This created a faster performance time
 
 ### Unfixed bug
 
@@ -151,14 +157,7 @@ I have manually tested the game as follows:
 
 ## Deployment
 
-GitHub Pages was used to deploy live versions of the website.
 
-1. Log in to GitHub and locate [GitHub Repository Riff Raff Band](https://trispatt.github.io/Riff-Raff-Band/index.html)
-2. At the top of the Repository(not the main navigation) locate "Settings" button on the menu.
-3. Scroll down the Settings page until you locate "GitHub Pages".
-4. Under "Source", click the dropdown menu "None" and select "Main" and click "Save".
-5. The page will automatically refresh.
-6. Scroll back to locate the now-published site [link](https://trispatt.github.io/Riff-Raff-Band/index.html) in the "GitHub Pages" section.
 
 ### Forking the GitHub Repository
 
@@ -181,12 +180,7 @@ By forking the repository, we make a copy of the original repository on our GitH
 ## Credits
 
 ### Content
-
-- All content was written by the developer
-- All gallery images, contact and thank-you images are owned by the developer and the band
-- The hero image was created and is owned by the developer
-- Images in the gigs section were taken from the internet and are not owned by the developer
-  
+ 
 ### Code
 
 - Readme template supplied by the code institute
