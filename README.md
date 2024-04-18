@@ -4,7 +4,7 @@ Hangman- The movie edition is a Python terminal game which runs on the Code Inst
 
 Users can try to guess the hidden movie title by guessing letters within the word before their lives run out.
 
-![Here is the live version of the game][link](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
+[Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
 
 ![Screenshot overview](assets/images/Screenshot-responsive.webp)
 
@@ -52,7 +52,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
 
 - The user is asked to enter their guess.
 
-![Start Game](assets/images/Screenshot-start-of-game.webp)
+![Start Game](assets/images/Screenshot-start-game.webp)
 
 - Correct guess!
 
@@ -60,7 +60,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
   If there are is than one occurence of that letter, they are also displayed in their positions 
   within the word.
 
-![Correct guess](assets/images/Screenshot-correct-guess.webp)
+![Correct guess](assets/images/Screenshot-correct.webp)
 
 - Incorrect guess!
 
@@ -97,7 +97,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
   - If the user has already guessed a letter, this is invalid and an error message is displayed.
   - The letters are all converted to uppercase and compared for validation.
 
-![game validation](assets/images/Screenshot-start-validation.webp)
+![game validation](assets/images/Screenshot-invalid-option.webp)
 
 ### Future Features
 
