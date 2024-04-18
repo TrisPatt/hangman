@@ -14,13 +14,13 @@ def rules():
     print("                       How to play!")
     print("----------------------------------------------------------------")
     print("""
-    Hangman is a word guessing game. The aim is to guess the hidden 
+    Hangman is a word guessing game. The aim is to guess the hidden
     word before your lives run out.
-    Guess a letter. If the letter is in the hidden word, it will be 
-    displayed in the position it occupies in that word. If it is not in the word, 
-    you will lose a life, and another part of the hangman will be revealed. 
-    The previously guessed letters will be displayed. 
-    You have 6 lives. 
+    Guess a letter. If the letter is in the hidden word, it will be displayed
+    in the position it occupies in that word. If it is not in the word,
+    you will lose a life, and another part of the hangman will be revealed.
+    The previously guessed letters will be displayed.
+    You have 6 lives.
     If you make 6 incorrect guesses, you lose.
     If you guess the word before the hangman is complete, you win!
     The word will be the name of a movie title""")
@@ -55,8 +55,9 @@ def return_main_menu():
     Converts the input to lowercase.
     """
     while True:
-        menu_return = input("Would you like to return to the main menu? y/n: \n").lower()
-    
+        menu_return = input("""Would you like to return to the main menu? y/n:
+        \n""").lower()
+
         if menu_return == 'y':
             start_menu()
             break
@@ -67,12 +68,14 @@ def return_main_menu():
         else:
             print("Please press 'y' or 'n'")
 
+
 def multiple_letter(word, letter):
     """
-    Iterates over each character in the word using a for loop combined with enumerate
-    to access both the character and its index in the word.
+    Iterates over each character in the word using a for loop combined with
+    enumerate to access both the character and its index in the word.
 
-    Returns a list containing the indices (positions) where the letter occurs in the word.
+    Returns a list containing the indices (positions) where the letter occurs
+    in the word.
     If the letter does not occur in the word, an empty list is returned.
     """
     multiple = []
@@ -85,18 +88,18 @@ def multiple_letter(word, letter):
 def start_game():
     """
     This function starts the Hangman game.
-    
+
     Generates a random word from the 'words_list' and converts it to uppercase
-    in order to validate it against the user's guess, which is also converted 
+    in order to validate it against the user's guess, which is also converted
     to uppercase on input.
-    
-    Displays the game's visual elements including the gallows, the word to 
+
+    Displays the game's visual elements including the gallows, the word to
     guess, and the previous incorrect guesses.
-    
-    Runs a while loop until the maximum number of incorrect guesses is reached 
+
+    Runs a while loop until the maximum number of incorrect guesses is reached
     or the user wins.
-    Within the loop, it validates the user input, updates the gallows and previous 
-    guesses, and shows the progress of the game.
+    Within the loop, it validates the user input, updates the gallows and
+    previous guesses, and shows the progress of the game.
     """
     clear_screen()
     print("Starting game...\n")
@@ -106,8 +109,8 @@ def start_game():
     hidden_word = random.choice(words_list).upper()
     hidden_letters = ["_"] * len(hidden_word)
     print("The word to guess is:", " ".join(hidden_letters))
-    print_gallows(0, max_incorrect_guesses)  
-        
+    print_gallows(0, max_incorrect_guesses)
+
     while incorrect_guesses <= max_incorrect_guesses:
         guess = input("Enter your guess: \n").upper()
         clear_screen()
@@ -116,9 +119,9 @@ def start_game():
         if len(guess) != 1 or not guess.isalpha():
             print("Invalid option. Please enter a single letter\n")
             print_gallows(incorrect_guesses, max_incorrect_guesses)
-            print(f"Incorrect guesses: ", " ".join(previous_guesses))  
-            print("The word to guess is:", " ".join(hidden_letters)) 
-            continue   
+            print(f"Incorrect guesses: ", " ".join(previous_guesses))
+            print("The word to guess is:", " ".join(hidden_letters))
+            continue
 
         # Check if the input is in the previous guesses list.
         if guess in previous_guesses:
@@ -128,7 +131,7 @@ def start_game():
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
             continue
 
-        """ Iterate through each index of the hidden word to check for 
+        """ Iterate through each index of the hidden word to check for
         multiple occurrences of the guessed letter. """
         if guess in hidden_word:
             print("Correct!!\n")
@@ -138,13 +141,13 @@ def start_game():
             print(f"The word to guess is:", " ".join(hidden_letters))
 
             # Check if all letters have been guessed correctly.
-            if "_" not in hidden_letters: 
+            if "_" not in hidden_letters:
                 print("Congratulations! You've guessed the word correctly!\n")
                 return_main_menu()
-            
+
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
-                        
+
         else:
             print("Incorrect\n")
             incorrect_guesses += 1
@@ -152,19 +155,19 @@ def start_game():
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             previous_guesses.append(guess)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
-            
+
             # Check if maximum guesses reached.
             if incorrect_guesses > max_incorrect_guesses:
                 print("You lost! You ran out of guesses.\n")
                 print(f"The word you were looking for is {hidden_word} !")
                 return_main_menu()
-                
-            
+
+
 def start_menu():
     """
-    Creates the introduction and provides 3 options to the user with a 
+    Creates the introduction and provides 3 options to the user with a
     while loop to limit the input to the 3 choices only.
-    
+
     Provides a way of exiting the game, rules, and starting the game.
     """
     print("-----------------------------------")
@@ -198,7 +201,7 @@ def start_menu():
         else:
             print("Invalid option. Please enter 1, 2, or 3.")
 
-    
+
 start_menu()
 
 
