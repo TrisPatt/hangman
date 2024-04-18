@@ -6,7 +6,7 @@ Users can try to guess the hidden movie title by guessing letters within the wor
 
 ![Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
 
-![Screenshot overview]()
+![Screenshot overview](assets/images/Screenshot 2024-04-18 114857.webp)
 
 ## How to play
 
@@ -37,13 +37,13 @@ The start menu contains 3 possible options:
 - Start game- to start the game
 - Exit- the option to exit out of the game
 
-![Start Menu]()
+![Start Menu](assets/images/Screenshot start menu.webp)
 
 #### How to play
 
 This tells the user how to play the game and what the rules are.
 
-![How to Play]()
+![How to Play](assets/images/Screenshot rules.webp)
 
 #### Start Game
 
@@ -71,14 +71,14 @@ body part of the hangman is revealed.
 
 - Winning the game
 
-If the user wins when the word is correctly guessed before their lives run out
-The user is asked if they wish to return to the main menu
+The user wins when the word is correctly guessed before their lives run out.
+The user is asked if they wish to return to the main menu.
 
 ![Winning the game]()
 
 - Losing the game
 
-When all the lives run out and all body parts of the hangman are displayed, the user has lost.
+The user loses when all the lives run out and all body parts of the hangman are displayed. 
 
 ![losing the game]()
 
