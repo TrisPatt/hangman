@@ -57,7 +57,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
 - Correct guess!
 
   - If correct, the user is informed and the letter is displayed where it is positioned in the word. 
-  If there are is than one occurence of that letter, they are also displayed in their positions 
+  If there is more than one occurence of a letter, they are also displayed in their positions 
   within the word.
 
 ![Correct guess](assets/images/Screenshot-correct.webp)
@@ -85,7 +85,7 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
 #### Input validation and Error checking
 
 - Start menu
- - In the start menu, only the numbers 1,2 or 3 can be entered. If anything else is entered then the user
+  - In the start menu, only the numbers 1,2 or 3 can be entered. If anything else is entered then the user
  is asked to input again; 1,2 or 3.
 
 ![start menu validation](assets/images/Screenshot-start-menu-error-check.webp)
