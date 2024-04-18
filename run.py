@@ -55,7 +55,7 @@ def return_main_menu():
     Converts the input to lowercase.
     """
     while True:
-        menu_return = input("""Would you like to return to the main menu? y/n: \n""").lower()
+        menu_return = input("Would you like to return to the main menu? y/n: \n").lower()
     
         if menu_return == 'y':
             start_menu()
