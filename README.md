@@ -119,15 +119,15 @@ various stages.
 - The gallows images are ASCII art stored in a list in a seperate file; gallows.py. The words
 used are also stored in a list in a seperate file; words.py. Both are imported at the top of the main
 file; run.py. 
-- Various variables are used to store game state and user input, such as "incorrect_guesses", 
-"max_incorrect_guesses", "previous_guesses", "hidden_word", "hidden_letters", and "guess".
-- The code defines several functions; "rules()", "print_gallows()", "clear_screen()", "return_main_menu()",
-m"ultiple_letter()", "start_game()", and "start_menu()" to organize and encapsulate different aspects of 
+- Various variables are used to store game state and user input, such as 'incorrect_guesses', 
+'max_incorrect_guesses', 'previous_guesses', 'hidden_word', 'hidden_letters', and 'guess'.
+- The code defines several functions; 'rules()', 'print_gallows()', 'clear_screen()', 'return_main_menu()',
+'multiple_letter()', 'start_game()', and 'start_menu()' to organize and encapsulate different aspects of 
 the game's functionality.
 - The game interacts with the user through input prompts and displays information using print()
 statements.
-- The "import random" and "import os" statements are used to import modules for generating random numbers
-(for selecting a word from the words_list) and for clearing the terminal screen "clear_screen()".
+- The 'import random' and 'import os' statements are used to import modules for generating random numbers
+(for selecting a word from the words_list) and for clearing the terminal screen 'clear_screen()'.
 
 ## Technologies used
 
@@ -155,7 +155,7 @@ I have manually tested the game as follows:
 
 | Test | Expected result | Actual Result | Fix | pass/ fail |
 |------|-----------------|---------------|-----|------------|
-|Guess the maximum number of guesses for the hangman to show (6)|After 6 guesses the game is over as the maximum number of lives is reached|The game gives the user an ectra life(7)|Change the code to the length of the incorrect guesses -2| Pass |
+|Guess the maximum number of guesses for the hangman to show (6)|After 6 guesses the game is over as the maximum number of lives is reached|The game gives the user an extra life(7)|Change the code to the length of the incorrect guesses -2| Pass |
 |Exit from the game after playing. Question asked "would you like to return to main menu?"|If yes, the game is exited to the console|The loop continues and returns to the game. The code allowed for both statements to return a True value which continued the loop|Convert the answers y/n to "lower()", allowing for case-insensitive comparison|Pass|
 
 
