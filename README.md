@@ -4,7 +4,7 @@ Hangman- The movie edition is a Python terminal game which runs on the Code Inst
 
 Users can try to guess the hidden movie title by guessing letters within the word before their lives run out.
 
-[Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/){:target="_blank"} 
+[Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
 
 ![Screenshot overview](assets/images/Screenshot-responsive.webp)
 
