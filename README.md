@@ -156,7 +156,7 @@ I have manually tested the game as follows:
 | Test | Expected result | Actual Result | Fix | pass/ fail |
 |------|-----------------|---------------|-----|------------|
 |Guess the maximum number of guesses for the hangman to show (6)|After 6 guesses the game is over as the maximum number of lives is reached|The game gives the user an ectra life(7)|Change the code to the length of the incorrect guesses -2| Pass |
-|Exit from the game after playing. Question asked "would you like to return to main menu?"|If yes, the game is exited to the console|The loop continues and returns to the game|The code y "or" Y was changed. The code allowed for both statements to return a True value which continued the loop|Convert the answers y/n to "lower()", allowing for case-insensitive comparison|Pass|
+|Exit from the game after playing. Question asked "would you like to return to main menu?"|If yes, the game is exited to the console|The loop continues and returns to the game. The code allowed for both statements to return a True value which continued the loop|Convert the answers y/n to "lower()", allowing for case-insensitive comparison|Pass|
 
 
 ### Unfixed bug
@@ -193,7 +193,7 @@ By forking the repository, we make a copy of the original repository on our GitH
 6. Type `git clone` and then paste The URL copied in the step 3.
 7. Press Enter and your local clone will be created.
  
-### Code
+### Credits
 
 - Code for the "clear_screen()" function researched on stack overflow
 - Heroku template supplied by Code Institute
