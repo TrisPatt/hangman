@@ -4,7 +4,7 @@ Hangman- The movie edition is a Python terminal game which runs on the Code Inst
 
 Users can try to guess the hidden movie title by guessing letters within the word before their lives run out.
 
-[Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/)
+[Here is the live version of the game](https://hangman-game-trispatt-99066ec34865.herokuapp.com/){:target="_blank"} 
 
 ![Screenshot overview](assets/images/Screenshot-responsive.webp)
 
@@ -119,15 +119,15 @@ various stages.
 - The gallows images are ASCII art stored in a list in a seperate file; gallows.py. The words
 used are also stored in a list in a seperate file; words.py. Both are imported at the top of the main
 file; run.py. 
-- Various variables are used to store game state and user input, such as 'incorrect_guesses', 
-'max_incorrect_guesses', 'previous_guesses', 'hidden_word', 'hidden_letters', and 'guess'.
-- The code defines several functions; 'rules()', 'print_gallows()', 'clear_screen()', 'return_main_menu()',
-'multiple_letter()', 'start_game()', and 'start_menu()' to organize and encapsulate different aspects of 
+- Various variables are used to store game state and user input, such as `incorrect_guesses`, 
+`max_incorrect_guesses`, `previous_guesses`, `hidden_word`, `hidden_letters`, and `guess`.
+- The code defines several functions; `rules()`, `print_gallows()`, `clear_screen()`, `return_main_menu()`,
+`multiple_letter()`, `start_game()`, and `start_menu()` to organize and encapsulate different aspects of 
 the game's functionality.
 - The game interacts with the user through input prompts and displays information using print()
 statements.
-- The 'import random' and 'import os' statements are used to import modules for generating random numbers
-(for selecting a word from the words_list) and for clearing the terminal screen 'clear_screen()'.
+- The `import random` and `import os` statements are used to import modules for generating random numbers
+(for selecting a word from the words_list) and for clearing the terminal screen `clear_screen()`.
 
 ## Technologies used
 
@@ -197,4 +197,4 @@ By forking the repository, we make a copy of the original repository on our GitH
 
 - Code for the "clear_screen()" function researched on stack overflow
 - Heroku template supplied by Code Institute
-- Readme template supplied by the code institute
+- Readme template supplied by Code Institute
