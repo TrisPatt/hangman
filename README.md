@@ -1,6 +1,6 @@
 # Hangman Movie Game
 
-Hangman- The movie edition is a Python terminal game which runs on the Code Institute mock terminal in Heroku.
+Hangman- The Movie Edition is a Python terminal game which runs on the Code Institute mock terminal in Heroku.
 
 Users can try to guess the hidden movie title by guessing letters within the word before their lives run out.
 
@@ -34,8 +34,8 @@ The aim is to guess the word before the whole of the hangman is hung, which is 6
 
 The start menu contains 3 possible options:
 - How to play- the rules of the game
-- Start game- to start the game
-- Exit- the option to exit out of the game
+- Start the game- to start the game
+- Quit- the option to exit out of the game
 
 ![Start Menu](assets/images/Screenshot-start-menu.webp)
 
@@ -137,7 +137,7 @@ statements.
 
 - Gitpod - To write the code
 - Git - Version control
-- Github - Deployment and storage of files online
+- Github - Storage of files online
 - Am I responsive - To show a screenshot of the responsive design across multiple devices
 - Heroku - For deploying the CLI project to a web browser interface
 
@@ -148,8 +148,8 @@ I have manually tested the game as follows:
 - Passed the code through a PEP8 linter. This did not return any errors.
 - Manually tested on my terminal and in the CI Heroku terminal.
  - Entered letters and invalid numbers where only 1,2 and 3 should be inputted in menu screen.
- - Entered numbers, special characters, multiple letters, and previously guessed incorrect and correct answer
- where only a single letter should be inputted in game screen.
+ - Entered numbers, special characters, multiple letters, and previously guessed incorrect/ correct answers,
+ where only a single letter should be inputted in the terminal.
 
 ### Bugs
 
@@ -198,3 +198,4 @@ By forking the repository, we make a copy of the original repository on our GitH
 - Code for the "clear_screen()" function researched on stack overflow
 - Heroku template supplied by Code Institute
 - Readme template supplied by Code Institute
+- Link to ASCII art for gallows provided by my mentor Mitko Bachvarov

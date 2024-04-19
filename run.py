@@ -23,7 +23,7 @@ def rules():
     You have 6 lives.
     If you make 6 incorrect guesses, you lose.
     If you guess the word before the hangman is complete, you win!
-    The word will be the name of a movie title""")
+    The word will be the name of a movie title.""")
     print("----------------------------------------------------------------")
     print("Press ENTER to return to the main menu...")
     input()
