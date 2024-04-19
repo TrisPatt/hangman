@@ -118,9 +118,9 @@ def start_game():
         # Check if the input is not more than one character or not alphabetic.
         if len(guess) != 1 or not guess.isalpha():
             print("Invalid option. Please enter a single letter\n")
+            print("The word to guess is:", " ".join(hidden_letters))
             print_gallows(incorrect_guesses, max_incorrect_guesses)
             print(f"Incorrect guesses: ", " ".join(previous_guesses))
-            print("The word to guess is:", " ".join(hidden_letters))
             continue
 
         # Check if the input is in the previous guesses list.
