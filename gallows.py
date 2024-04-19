@@ -1,4 +1,3 @@
-
 gallows_image = ['''
   +---+
   |   |

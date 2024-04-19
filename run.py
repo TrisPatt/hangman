@@ -174,13 +174,13 @@ def start_menu():
     print("Welcome to Hangman! - Movie edition")
     print("-----------------------------------")
     print('''
-      +---+
-      |   |
-      O   |
-     /|\  |
-     / \  |
-          |
-    =========''')
+          +---+
+          |   |
+              |
+              |
+              |
+              |
+        =========''')
     while True:
         print("Please select an option: ")
         print(" 1. How to play")

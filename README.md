@@ -79,8 +79,10 @@ underscores. The gallows are shown, as well as a section for incorrect guesses.
 - Losing the game
 
   - The user loses when all the lives run out and all body parts of the hangman are displayed. 
+  - The word to guess is displayed to the user.
 
 ![losing the game](assets/images/Screenshot-lose.webp)
+
 
 #### Input validation and Error checking
 
@@ -115,17 +117,17 @@ various stages.
 ## Data Model
 
 - The gallows images are ASCII art stored in a list in a seperate file; gallows.py. The words
-used are also stored in a seperate file; words.py. Both are imported at the top of the main
+used are also stored in a list in a seperate file; words.py. Both are imported at the top of the main
 file; run.py. 
-- Various variables are used to store game state and user input, such as incorrect_guesses, 
-max_incorrect_guesses, previous_guesses, hidden_word, hidden_letters, and guess.
-- The code defines several functions; rules(), print_gallows(), clear_screen(), return_main_menu(),
-multiple_letter(), start_game(), and start_menu() to organize and encapsulate different aspects of 
+- Various variables are used to store game state and user input, such as "incorrect_guesses", 
+"max_incorrect_guesses", "previous_guesses", "hidden_word", "hidden_letters", and "guess".
+- The code defines several functions; "rules()", "print_gallows()", "clear_screen()", "return_main_menu()",
+m"ultiple_letter()", "start_game()", and "start_menu()" to organize and encapsulate different aspects of 
 the game's functionality.
 - The game interacts with the user through input prompts and displays information using print()
 statements.
-- The import random and import os statements are used to import modules for generating random numbers
-(for selecting a word from the words_list) and for clearing the terminal screen clear_screen().
+- The "import random" and "import os" statements are used to import modules for generating random numbers
+(for selecting a word from the words_list) and for clearing the terminal screen "clear_screen()".
 
 ## Technologies used
 
@@ -137,6 +139,7 @@ statements.
 - Git - Version control
 - Github - Deployment and storage of files online
 - Am I responsive - To show a screenshot of the responsive design across multiple devices
+- Heroku - For deploying the CLI project to a web browser interface
 
 ## Testing
 
@@ -145,10 +148,15 @@ I have manually tested the game as follows:
 - Passed the code through a PEP8 linter. This did not return any errors.
 - Manually tested on my terminal and in the CI Heroku terminal.
  - Entered letters and invalid numbers where only 1,2 and 3 should be inputted in menu screen.
- - Entered numbers, special characters, multiple letters, a previosly guessed incorrect and correct answer
- where only a single letter ahould be inputted in game screen.
+ - Entered numbers, special characters, multiple letters, and previously guessed incorrect and correct answer
+ where only a single letter should be inputted in game screen.
 
 ### Bugs
+
+| Test | Expected result | Actual Result | Fix | pass/ fail |
+|------|-----------------|---------------|-----|------------|
+|Guess the maximum number of guesses for the hangman to show (6)|After 6 guesses the game is over as the maximum number of lives is reached|The game gives the user an ectra life(7)|Change the code to the length of the incorrect guesses -2| Pass |
+|Exit from the game after playing. Question asked "would you like to return to main menu?"|If yes, the game is exited to the console|The loop continues and returns to the game|The code y "or" Y was changed. The code allowed for both statements to return a True value which continued the loop|Convert the answers y/n to "lower()", allowing for case-insensitive comparison|Pass|
 
 
 ### Unfixed bug
@@ -157,30 +165,36 @@ I have manually tested the game as follows:
 
 ## Deployment
 
+This project was deployed using the Code Institutes mock terminal for Heroku.
 
+Steps for deployment:
+
+  - Folk or clone this repository
+  - Create a new Heroku app
+  - Set the buildbacks to "python" and "NodeJS", in that order
+  - Link the Heroku app to the resporitory
+  - Click on deploy
 
 ### Forking the GitHub Repository
 
 By forking the repository, we make a copy of the original repository on our GitHub account to view and change without affecting the original repository by using these steps:
 
-1. Log in to GitHub and locate [GitHub RepositoryRiff Raff Band](https://trispatt.github.io/Riff-Raff-Band/index.html)
+1. Log in to GitHub and locate [GitHub Repository Hangman game](https://github.com/TrisPatt/hangman)
 2. At the top of the Repository(under the main navigation) locate "Fork" button.
 3. Now you should have a copy of the original repository in your GitHub account.
 
 ### Local Clone
 
-1. Log in to GitHub and locate [GitHub Repository Riff Raff Band](https://trispatt.github.io/Riff-Raff-Band/index.html)
+1. Log in to GitHub and locate [GitHub Repository Hangman game](https://github.com/TrisPatt/hangman)
 2. Under the repository name click "Clone or download"
 3. Click on the code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type `git clone` and then paste The URL copied in the step 3.
 7. Press Enter and your local clone will be created.
-
-## Credits
-
-### Content
  
 ### Code
 
+- Code for the "clear_screen()" function researched on stack overflow
+- Heroku template supplied by Code Institute
 - Readme template supplied by the code institute
